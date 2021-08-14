@@ -1,4 +1,3 @@
 # About Me Website
 
-This website is very simple, and just features a few social media buttons.
-Css from [codepen](https://codepen.io/chrisdothtml/pen/azPYqq)
+This site features some basic social media buttons, with dynamic scrolling and a github repo list.
