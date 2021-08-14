@@ -26,9 +26,6 @@ function getTimeSinceIso(iso) {
     let currentTime = new Date();
     let expireTime = new Date(iso);
 
-    console.log(currentTime);
-    console.log(expireTime);
-
     let seconds = Math.floor((currentTime - expireTime) / 1000);
     let minutes = Math.floor((currentTime - expireTime) / (1000 * 60));
     let hours = Math.floor((currentTime - expireTime) / (1000 * 60 * 60));
@@ -86,6 +83,8 @@ async function getJson(url) {
 async function main() {
     repos = await getJson(apiUrl);
 
+    console.log(repos);
+
     // sort repos by new commits
     repos.sort(function(a,b){
         // Turn your strings into dates, and then subtract them
@@ -93,27 +92,46 @@ async function main() {
         return new Date(b.pushed_at) - new Date(a.pushed_at);
     });
       
+    for (let i = 0; i < repos.length; i++) {
+        // move archived repos to the bottom
+        if (repos[i].archived) {
+            repos.push(repos[i]);
+            repos.splice(i, 1);
+        };
+    };
+
+    console.log(repos);
     
     // create a div for every repo
     for (let i = 0; i < repos.length; i++) {
         let repo = repos[i];
-        let repo_name = repo.name;
+        let repo_name = repo.full_name;
         let repo_url = repo.html_url;
         let repo_description = repo.description;
         let repo_last_commit_ISO = repo.pushed_at;
-        let repo_last_commit_time = getTimeSinceIso(repo_last_commit_ISO);
+        let archived = repo.archived;
 
-        console.log(repo_last_commit_ISO);
+        let repo_last_commit_time;
+        let repo_archived_css;
+
+        if (!archived) {
+            repo_last_commit_time = getTimeSinceIso(repo_last_commit_ISO);
+            repo_archived_css = "";
+        } else {
+            repo_last_commit_time = "Archived";
+            repo_archived_css = " repo-archived";
+        };
 
         let div = document.createElement('div')
         div.className = 'github-repo'
         div.innerHTML = `
         <div class="repo-name"><a href="${repo_url}">${repo_name}</a></div>
         <div class="repo-desc">${repo_description}</div> 
-        <div class="repo-date"><a>${repo_last_commit_time}</a></div>
+        <div class="repo-date${repo_archived_css}"><a>${repo_last_commit_time}</a></div>
         `;
+
         github_div.appendChild(div)
-    }
+    };
 }
 
 main();
