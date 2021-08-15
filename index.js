@@ -1,24 +1,44 @@
-var controller = new ScrollMagic.Controller();
-
 const [red, green, blue] = [236, 240, 241]
 const body = document.body;
 
 // get element by class name
 const buttons = document.getElementsByClassName('social-btns')[0];
+const arrow = document.getElementsByClassName('arrow')[0];
+const github_div = document.getElementById('github-div'); 
+const title = document.getElementById('title');
+
+console.log(arrow);
+
+// force start at top
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 
 window.addEventListener('scroll', () => {
-  const y = 1 + (window.scrollY || window.pageYOffset) / 150
-  const [r, g, b] = [red/y, green/y, blue/y].map(Math.round)
-  body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-})
+    arrow.style.opacity = 1 - (50*(window.scrollY / body.offsetHeight));
+    const y = 1 + (window.scrollY || window.pageYOffset) / 150
+    const [r, g, b] = [red/y, green/y, blue/y].map(Math.round)
+    body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+});
 
-new ScrollMagic.Scene({
-    duration: 800,
-    offset: 0
-})
-    .setPin('#social-btns') 
-    .addTo(controller); 
+// fade out div on scroll down
+
+// pin div using scrolltrigger
+
+ScrollTrigger.create({
+  trigger: "#social-btns",
+  start: 0,
+  end: 800,
+  pin: true,
+  onToggle: self => console.log("toggled, isActive:", self.isActive),
+  onUpdate: self => {
+    console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+  }
+});
+
+console.log(window.innerWidth);
 
 // github api
 
@@ -67,7 +87,7 @@ function getTimeSinceIso(iso) {
     };
 };  
 
-const github_div = document.getElementById('github-div'); 
+console.log(title);
 
 console.log(github_div);
 
@@ -132,6 +152,6 @@ async function main() {
 
         github_div.appendChild(div)
     };
-}
+};
 
 main();
