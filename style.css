@@ -232,10 +232,22 @@ button {
   top: 2000px;
   color: rgb(16,15,19);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+  #github-div {
+    grid-template-columns: minmax(100px, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1339px) {
+  #github-div {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .github-repo {
@@ -271,7 +283,7 @@ button {
   text-align: left;
   font-weight: bolder;
   display: flex;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   align-items: center;
   padding: 15px;
   margin: 0;
