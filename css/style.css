@@ -89,6 +89,12 @@ button {
 .social-btns .btn.github .fa {
   color: #211F1F;
 }
+.social-btns .btn.jacket:before {
+  background-color: #800000;
+}
+.social-btns .btn.jacket .fa {
+  color: #800000;
+}
 .social-btns .btn.medium:before {
   background-color: #211F1F;
 }
