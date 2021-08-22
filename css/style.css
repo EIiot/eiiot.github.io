@@ -125,6 +125,12 @@ button {
 .social-btns .btn.skype .fa {
   color: #00aff0;
 }
+.social-btns .btn.linkedin:before {
+  background-color: #0077b5;
+}
+.social-btns .btn.linkedin .fa {
+  color: #0077b5;
+}
 .social-btns .btn:focus:before,
 .social-btns .btn:hover:before {
   top: -10%;
