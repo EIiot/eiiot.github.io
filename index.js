@@ -92,7 +92,7 @@ console.log(title);
 console.log(github_div);
 
 let jsondata = "";
-let apiUrl = 'https://api.github.com/users/EliotHertenstein/repos';
+let apiUrl = 'https://api.github.com/users/eiiot/repos';
 
 async function getJson(url) {
     let response = await fetch(url);
