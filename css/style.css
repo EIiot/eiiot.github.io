@@ -206,7 +206,7 @@ button {
   text-align: center;
   width: 100%;
   color: grey;
-  
+  cursor: pointer;
 }
 
 .arrow .icon {
