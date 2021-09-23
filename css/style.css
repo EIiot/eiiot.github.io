@@ -237,10 +237,7 @@ button {
   position: relative;
   width: 100%;
   height: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding: 40px;
   margin: 0 auto;
   top: 2000px;
   color: rgb(16,15,19);
@@ -286,6 +283,13 @@ button {
   border-radius: 3px;
   overflow: hidden;
   position: relative;
+  transition: all .2s ease-in-out;
+}
+
+/* github repo hover */
+.github-repo:hover {
+  transform: translate(0, -5px);
+  cursor: pointer;
 }
 
 .repo-name {
@@ -334,6 +338,10 @@ button {
   vertical-align: middle;
   line-height: normal;
   color: rgb(194, 194, 194);
+}
+
+.repo-date a:hover {
+  text-decoration: none;
 }
 
 .repo-archived {
