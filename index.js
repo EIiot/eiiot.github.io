@@ -19,6 +19,9 @@ console.log(`██╗    ██╗███████╗██╗      ██
 
 𝚆𝚊𝚗𝚝 𝚝𝚘 𝚍𝚎𝚋𝚞𝚐 𝚝𝚑𝚒𝚗𝚐𝚜? 𝚃𝚛𝚢 𝚕𝚘𝚐𝚐𝚎𝚛.𝚎𝚗𝚊𝚋𝚕𝚎𝙻𝚘𝚐𝚐𝚎𝚛()
 `);
+
+
+// code for custom console.log()
 var logger=function(){var oldConsoleLog=null;var pub={};pub.enableLogger=function enableLogger(){if(oldConsoleLog==null)
 return;window.console.log=oldConsoleLog;localStorage.consoleLog="enabled"};pub.disableLogger=function disableLogger(){oldConsoleLog=console.log;window.console.log=function(){};localStorage.consoleLog="disabled"};return pub}();if(localStorage.consoleLog=="enabled"){logger.enableLogger()}else{logger.disableLogger()};
 
