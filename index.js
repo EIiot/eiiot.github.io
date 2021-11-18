@@ -18,7 +18,8 @@ console.log(`██╗    ██╗███████╗██╗      ██
 𝙿𝚕𝚎𝚊𝚜𝚎 𝚍𝚘𝚗'𝚝 𝚙𝚊𝚜𝚝𝚎 𝚝𝚑𝚒𝚗𝚐𝚜 𝚑𝚎𝚛𝚎 𝚞𝚗𝚕𝚎𝚜𝚜 𝚢𝚘𝚞 𝚔𝚗𝚘𝚠 𝚠𝚑𝚊𝚝 𝚢𝚘𝚞'𝚛𝚎 𝚍𝚘𝚒𝚗𝚐
 
 𝚆𝚊𝚗𝚝 𝚝𝚘 𝚍𝚎𝚋𝚞𝚐 𝚝𝚑𝚒𝚗𝚐𝚜? 𝚃𝚛𝚢 𝚕𝚘𝚐𝚐𝚎𝚛.𝚎𝚗𝚊𝚋𝚕𝚎𝙻𝚘𝚐𝚐𝚎𝚛()
-`);var logger=function(){var oldConsoleLog=null;var pub={};pub.enableLogger=function enableLogger(){if(oldConsoleLog==null)
+`);
+var logger=function(){var oldConsoleLog=null;var pub={};pub.enableLogger=function enableLogger(){if(oldConsoleLog==null)
 return;window.console.log=oldConsoleLog;localStorage.consoleLog="enabled"};pub.disableLogger=function disableLogger(){oldConsoleLog=console.log;window.console.log=function(){};localStorage.consoleLog="disabled"};return pub}();if(localStorage.consoleLog=="enabled"){logger.enableLogger()}else{logger.disableLogger()};
 
 console.log(arrow);
@@ -153,7 +154,7 @@ async function main() {
             repo_archived_css = "";
         } else {
             repo_last_commit_time = "Archived";
-            repo_archived_css = " repo-archived";
+            repo_archived_css = "repo-archived";
         };
 
         let div = document.createElement('a')
@@ -163,7 +164,7 @@ async function main() {
         <div class="github-repo">
           <div class="repo-name">${repo_name}</div>
           <div class="repo-desc">${repo_description}</div> 
-          <div class="repo-date"><a>${repo_last_commit_time}</a></div>
+          <div class="repo-date ${repo_archived_css}"><a>${repo_last_commit_time}</a></div>
         </div>
         `;
 
