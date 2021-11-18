@@ -23,7 +23,7 @@ console.log(`██╗    ██╗███████╗██╗      ██
 
 // code for custom console.log()
 var logger=function(){var oldConsoleLog=null;var pub={};pub.enableLogger=function enableLogger(){if(oldConsoleLog==null)
-return;window.console.log=oldConsoleLog;localStorage.consoleLog="enabled"};pub.disableLogger=function disableLogger(){oldConsoleLog=console.log;window.console.log=function(){};localStorage.consoleLog="disabled"};return pub}();if(localStorage.consoleLog=="enabled"){logger.enableLogger()}else{logger.disableLogger()};
+return;window.console.log=oldConsoleLog;localStorage.consoleLog="enabled";return "Logger Enabled!"};pub.disableLogger=function disableLogger(){oldConsoleLog=console.log;window.console.log=function(){};localStorage.consoleLog="disabled";return "Logger Disabled!"};return pub}();if(localStorage.consoleLog=="enabled"){logger.enableLogger()}else{logger.disableLogger()};
 
 console.log(arrow);
 
