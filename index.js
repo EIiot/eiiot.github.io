@@ -25,14 +25,11 @@ console.log(`██╗    ██╗███████╗██╗      ██
 var logger=function(){var oldConsoleLog=null;var pub={};pub.enableLogger=function enableLogger(){if(oldConsoleLog==null)
 return;window.console.log=oldConsoleLog;localStorage.consoleLog="enabled";return "Logger Enabled!"};pub.disableLogger=function disableLogger(){oldConsoleLog=console.log;window.console.log=function(){};localStorage.consoleLog="disabled";return "Logger Disabled!"};return pub}();if(localStorage.consoleLog=="enabled"){logger.enableLogger()}else{logger.disableLogger()};
 
-console.log(arrow);
-
 // force start at top
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
-}
-
+};
 
 window.addEventListener('scroll', () => {
     arrow.style.opacity = 1 - (50*(window.scrollY / body.offsetHeight));
@@ -55,8 +52,6 @@ ScrollTrigger.create({
     console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
   }
 });
-
-console.log(window.innerWidth);
 
 // github api
 
@@ -118,7 +113,7 @@ async function getJson(url) {
     return data;
 }
 
-async function main() {
+async function github() {
     repos = await getJson(apiUrl);
 
     console.log(repos);
@@ -166,7 +161,7 @@ async function main() {
         div.innerHTML = `
         <div class="github-repo">
           <div class="repo-name">${repo_name}</div>
-          <div class="repo-desc">${repo_description}</div> 
+          <div class="repo-desc">${repo_description != null ? repo_description : ''}</div> 
           <div class="repo-date ${repo_archived_css}"><a>${repo_last_commit_time}</a></div>
         </div>
         `;
@@ -175,4 +170,4 @@ async function main() {
     };
 };
 
-main();
+github();
