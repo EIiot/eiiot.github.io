@@ -13,17 +13,7 @@ console.log(`██╗    ██╗███████╗██╗      ██
 ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  ██║
 ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  ╚═╝
 ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗██╗
-╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝
-
-𝙿𝚕𝚎𝚊𝚜𝚎 𝚍𝚘𝚗'𝚝 𝚙𝚊𝚜𝚝𝚎 𝚝𝚑𝚒𝚗𝚐𝚜 𝚑𝚎𝚛𝚎 𝚞𝚗𝚕𝚎𝚜𝚜 𝚢𝚘𝚞 𝚔𝚗𝚘𝚠 𝚠𝚑𝚊𝚝 𝚢𝚘𝚞'𝚛𝚎 𝚍𝚘𝚒𝚗𝚐
-
-𝚆𝚊𝚗𝚝 𝚝𝚘 𝚍𝚎𝚋𝚞𝚐 𝚝𝚑𝚒𝚗𝚐𝚜? 𝚃𝚛𝚢 𝚕𝚘𝚐𝚐𝚎𝚛.𝚎𝚗𝚊𝚋𝚕𝚎𝙻𝚘𝚐𝚐𝚎𝚛()
-`);
-
-
-// code for custom console.log()
-var logger=function(){var oldConsoleLog=null;var pub={};pub.enableLogger=function enableLogger(){if(oldConsoleLog==null)
-return;window.console.log=oldConsoleLog;localStorage.consoleLog="enabled";return "Logger Enabled!"};pub.disableLogger=function disableLogger(){oldConsoleLog=console.log;window.console.log=function(){};localStorage.consoleLog="disabled";return "Logger Disabled!"};return pub}();if(localStorage.consoleLog=="enabled"){logger.enableLogger()}else{logger.disableLogger()};
+╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝`);
 
 // force start at top
 
@@ -114,26 +104,23 @@ async function getJson(url) {
 }
 
 async function github() {
-    repos = await getJson(apiUrl);
+    let response = await getJson(apiUrl);
 
-    console.log(repos);
+    console.log(response);
 
     // sort repos by new commits
-    repos.sort(function(a,b){
+    response.sort(function(a,b){
         // Turn your strings into dates, and then subtract them
         // to get a value that is either negative, positive, or zero.
         return new Date(b.pushed_at) - new Date(a.pushed_at);
     });
       
-    for (let i = 0; i < repos.length; i++) {
-        // move archived repos to the bottom
-        if (repos[i].archived) {
-            repos.push(repos[i]);
-            repos.splice(i, 1);
-        };
-    };
+    // move all repos with repo.archived = true to the end of the array, without removing them from the array
+    let repos = response.filter(repo => !repo.archived);
 
-    console.log(repos);
+    let archivedRepos = response.filter(repo => repo.archived);
+
+    repos = repos.concat(archivedRepos);
     
     // create a div for every repo
     for (let i = 0; i < repos.length; i++) {
