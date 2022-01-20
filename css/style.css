@@ -96,10 +96,10 @@ button {
   color: #800000;
   padding-top: 6px;
 }
-.social-btns .btn.medium:before {
+.social-btns .btn.image:before {
   background-color: #211F1F;
 }
-.social-btns .btn.medium .fa {
+.social-btns .btn.image .fa {
   color: #211F1F;
 }
 .social-btns .btn.twitter:before {
