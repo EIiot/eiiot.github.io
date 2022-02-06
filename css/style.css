@@ -102,6 +102,12 @@ button {
 .social-btns .btn.image .fa {
   color: #211F1F;
 }
+.social-btns .btn.blog:before {
+  background-color: #3f41bd;
+}
+.social-btns .btn.blog .fa {
+  color: #3f41bd;
+}
 .social-btns .btn.twitter:before {
   background-color: #3cf;
 }
