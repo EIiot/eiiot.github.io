@@ -5,9 +5,9 @@ import '../css/jacket-font.css'
 // No it's not JQuery
 const $ = document.querySelector.bind(document);
 
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// }
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 function toggleDarkMode() {
   document.documentElement.classList.toggle('dark');
