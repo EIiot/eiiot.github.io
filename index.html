@@ -8,14 +8,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-    <!-- Fontawesome -->
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/0f926a83db.js" crossorigin="anonymous"></script>
   </head>
   <body class="h-max overflow-x-hidden transition-colors duration-300 bg-white dark:bg-black">
-    <div class="top-0 left-0 absolute z-10 w-3 h-3">
-    </div>
-    <!-- Hello animation -->
-    <section id="welcome" class="h-[2500px] overflow-hidden">
+
+    <section id="welcome" class="h-[calc(1600px+100vh)] overflow-hidden">
       <div id="pin-1" class="h-screen flex flex-col items-center justify-center">
         <svg id="hello-svg" class="w-4/5 translate-x-[40vw] hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 163.22">
           <defs>
@@ -52,34 +52,57 @@
         </svg>
       </div>
     </section>
-    <!-- Intro Div -->
+
     <section id="intro" class="h-screen flex flex-row">
-      <div class="w-full flex items-center text-center justify-center m-3">
+      <div id="test" class="w-full flex items-center text-center justify-center m-3">
         <h3 id="intro-text" class="text-9xl font-bold text-black dark:text-white">Hi! I'm <a id="eliot-link" class="text-9xl font-bold text-transparent bg-clip-text">Eliot</a></h3>
       </div>
     </section>
-    <section id="interests" class="h-screen flex flex-col w-full left-0 items-center justify-center m-3 text-center">
-      <div id="im-a-title" class="text-7xl font-bold text-black dark:text-white">I'm a</div>
-      <ul class="overflow-visible">
-        <li id="developer-link" class="cursor-pointer m-5 text-7xl font-bold group">
-          <a class="lg:inline-block text-black dark:text-white lg:group-hover:!-translate-x-[43.225px] lg:transition lg:duration-100 lg:ease-in-out">Developer</a>
-          <i class="fa fa-github text-black block md:inline-block dark:text-white lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[43.225px] lg:transition lg:mx-[16.7px] lg:ease-in-out"></i>
-        </li>
-        <li id="journalist-link" class="cursor-pointer m-5 text-7xl font-bold group">
-          <a class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[51.6665px] lg:transition lg:duration-100 lg:ease-in-out">Journalist</a>
-          <i class='fa icon-JKT-Logo block md:inline-block text-[#800000] translate-y-2 lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[51.6665px] lg:transition lg:mx-[16.7px] lg:ease-in-out'></i>
-        </li> 
-        <li id="cyclist-link" class="cursor-pointer m-5 text-7xl font-bold group">
-          <a class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[35.35px] lg:transition lg:duration-100 lg:ease-in-out">Cyclist</a>
-          <i class="fa-brands fa-strava block md:inline-block text-orange-600 lg:fixed lg:w-0 group-hover:w-auto lg:opacity-0 group-hover:opacity-100 lg:group-hover:-translate-x-[35.35px] transition lg:mx-[16.7px] ease-in-out"></i>
-        </li>
-      </ul>
+
+    <section id="interests" class="h-screen flex flex-row">
+      <div class="w-full items-center justify-center m-3 text-center">
+        <div id="im-a-title" class="text-7xl font-bold text-black dark:text-white">I'm a</div>
+        <ul class="overflow-visible">
+          <li id="developer-link" class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group">
+            <a class="lg:inline-block text-black dark:text-white lg:group-hover:!-translate-x-[43.225px] lg:transition lg:duration-100 lg:ease-in-out">Developer</a>
+            <a href="https://github.com/eiiot"><i class="fa fa-github text-black block md:inline-block dark:text-white lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[43.225px] lg:transition lg:mx-[16.7px] lg:ease-in-out"></i></a>
+          </li>
+          <li id="journalist-link" class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group">
+            <a class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[51.6665px] lg:transition lg:duration-100 lg:ease-in-out">Journalist</a>
+            <a href="https://berkeleyhighjacket.com/author/eliothertenstein"><i class='fa icon-JKT-Logo block md:inline-block text-[#800000] translate-y-2 lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[51.6665px] lg:transition lg:mx-[16.7px] lg:ease-in-out'></i></a>
+          </li> 
+          <li id="cyclist-link" class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group">
+            <a class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[35.35px] lg:transition lg:duration-100 lg:ease-in-out">Cyclist</a>
+            <a href="https://www.strava.com/athletes/eliothertenstein"><i class="fa-brands fa-strava block md:inline-block text-orange-600 lg:fixed lg:w-0 group-hover:w-auto lg:opacity-0 group-hover:opacity-100 lg:group-hover:-translate-x-[35.35px] transition lg:mx-[16.7px] ease-in-out"></i></a>
+          </li>
+        </ul>
+      </div>
     </section>
-    <section id="making" class="h-screen">
+
+    <section id="worked" class="h-[180vh] flex flex-row">
       <div class="w-full flex flex-col items-center text-center justify-center m-3">
-        <h3 class="text-9xl font-bold text-black dark:text-white block">I love making things</h3>
-        <a id="dynamic-toggle" class="text-9xl font-bold text-black dark:text-white block cursor-pointer">dynamic,</a>
-        <a id="responsive-toggle" class="text-9xl font-bold text-black dark:text-white block cursor-pointer">responsive</a>
+        <span class="text-7xl font-bold text-black dark:text-white">I've worked on websites</span>
+        <span id="big-text" class="text-7xl font-bold text-black dark:text-white -z-10 backspace-hidden"><span class="inline-block w-20 text-right">B</span>i<span class="inline-block w-20 text-left">g</span></span>
+        <div class="h-[95vh] relative"></div>
+        <span id="small-text-wrapper" class="text-3xl font-bold text-white dark:text-black backspace-hidden"><span>and</span><br><span id="small-text" class="inline-block">small</span></span>
+      </div>
+    </section>
+
+    <section id="fun" class="h-screen flex flex-row">
+      <div class="w-full flex flex-col items-center text-center justify-center m-3 select-none">
+        <span class="text-7xl font-bold text-black dark:text-white backspace-hidden">I love to make cool things for <a id="fun" class="cursor-pointer  text-transparent bg-clip-text bg-indigo-500">fun!</a></span>
+        <button id="super-confetti-button" class="translate-y-[-100vh] transition py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/50 focus:outline-none m-3 opacity-0">Ultra Confetti Button</button>
+      </div>
+    </section>
+
+    <section id="contact" class="h-screen flex flex-row">
+      <div class="w-full flex flex-col items-center text-center justify-center m-3 select-none">
+        <span class="text-5xl font-bold text-black dark:text-white backspace-hidden ">So let's make something cool together!</span>
+        <form action="mailto:eliot@hertenste.in" class="flex items-center justify-center">
+          <input type="submit" id="contact-button" class="py-4 px-6 text-white text-lg font-semibold rounded-lg drop-shadow-lg transition duration-100 focus:outline-none m-10 z-10 cursor-pointer" value="Contact Me">
+          <!-- Dotted Button Outline Under Button -->
+           <div class="absolute py-3 px-5 text-transparent text-lg box-border border-[2px] border-dashed border-white bg-transparent font-semibold rounded-lg drop-shadow-lg transition duration-100 focus:outline-none m-10 -z-10">Contact Me</div>
+        </form>
       </div>
     </section>
   </body>

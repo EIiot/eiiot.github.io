@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/** Fonts **/
 @font-face {
   font-display:swap;
   font-family:Articulat CF;
@@ -33,16 +34,22 @@ body {
   font-family: 'Articulat CF', sans-serif;
 }
 
+/** Hello Animation **/
+
 #hello {
   stroke-dasharray: 1859.777587890625;
   stroke-dashoffset: 1859.777587890625;
 }
 
+/** Gradient Animation **/
+
 #eliot-link {
   background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 4s ease infinite;
 	height: 100vh;
+  /* animated box shadow */
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
 }
 
 @keyframes gradient {
@@ -55,4 +62,26 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+/** Big Text Animation **/
+#big-text {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/** Contact Rainbow Button **/
+
+/* button background is rainbow fading, along with drop shadow */
+#contact-button {
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  animation: rainbow 18s ease infinite;
+}
+
+@keyframes rainbow { 
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
 }
