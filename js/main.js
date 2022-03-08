@@ -30,7 +30,9 @@ ScrollTrigger.create({
     $('#hello').style.strokeDashoffset = (1859.777587890625 * (1 - self.progress));
     // translate #hello-svg from 40vh to 0vh
     const vw = window.innerWidth/ 100;
-    $('#hello-svg').style.transform = `translateX(${0.01 + (vw * 40 * (1 - self.progress))}px)`;
+    $('#hello-svg').style.transform = `translateX(${0.01 + ((((vw * 40) - ((( 80 * vw ) * 7.5) / 480))) * (1 - self.progress))}px)`;
+    // hide the scroll indicator after 20%
+    $('#scroll-indicator-div').children[0].style.opacity = self.progress > 0.1 ? 0 : 1 - (10 * self.progress);
   },
   onLeave: self => {
     $('#pin-1').style.transform = `translateY(1600px)`;
