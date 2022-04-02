@@ -806,10 +806,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: calc(1600px + 100vh);
 }
 
-.h-\[80vh\] {
-  height: 80vh;
-}
-
 .h-screen {
   height: 100vh;
 }
@@ -1824,13 +1820,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-indigo-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .bg-black {
@@ -1846,10 +1842,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
-.bg-\[linear-gradient\(90deg\2c \#057a93_0\%\2c \#8fc9a9_9\%\2c \#d2d906_17\%\2c \#e8d804_24\%\2c \#fed105_31\%\2c \#fdcb5e_35\%\2c \#fea02a_40\%\2c \#fe8765_47\%\2c \#f25546_54\%\2c \#ee6b6a_61\%\2c \#e994b2_64\%\2c \#d496c0_72\%\2c \#7e6db0_76\%\2c 5f60a9_86\%\2c \#7a9beb_93\%\2c \#4ba8d4_97\%\2c \#7ab8df_100\%\)\] {
-  background-image: linear-gradient(90deg,#057a93 0%,#8fc9a9 9%,#d2d906 17%,#e8d804 24%,#fed105 31%,#fdcb5e 35%,#fea02a 40%,#fe8765 47%,#f25546 54%,#ee6b6a 61%,#e994b2 64%,#d496c0 72%,#7e6db0 76%,5f60a9 86%,#7a9beb 93%,#4ba8d4 97%,#7ab8df 100%);
 }
 
 .bg-\[linear-gradient\(90deg\2c _\#057a93_0\%\2c _\#8fc9a9_9\%\2c _\#d2d906_17\%\2c _\#e8d804_24\%\2c _\#fed105_31\%\2c _\#fdcb5e_35\%\2c _\#fea02a_40\%\2c _\#fe8765_47\%\2c _\#f25546_54\%\2c _\#ee6b6a_61\%\2c _\#e994b2_64\%\2c _\#d496c0_72\%\2c _\#7e6db0_76\%\2c _\#5f60a9_86\%\2c _\#7a9beb_93\%\2c _\#4ba8d4_97\%\2c _\#7ab8df_100\%\)\] {
@@ -2053,11 +2045,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   vertical-align: super;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
@@ -2091,6 +2078,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-2xl {
@@ -2174,18 +2166,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.text-transparent {
+  color: transparent;
 }
 
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-transparent {
-  color: transparent;
 }
 
 .text-\[\#800000\] {
@@ -2196,6 +2183,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-orange-600 {
   --tw-text-opacity: 1;
   color: rgb(234 88 12 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
@@ -2593,14 +2585,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .dark .dark\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {
@@ -2610,6 +2602,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:text-7xl {
     font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .md\:text-9xl {
+    font-size: 8rem;
     line-height: 1;
   }
 }
