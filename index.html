@@ -11,18 +11,47 @@
     <!-- Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/0f926a83db.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/0f926a83db.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Analytics -->
-    <script defer data-domain="eliothertenstein.com" src="https://analytics.eliothertenstein.com/js/plausible.js"></script>
+    <script
+      defer
+      data-domain="eliothertenstein.com"
+      src="https://analytics.eliothertenstein.com/js/plausible.js"
+    ></script>
   </head>
-  <body class="h-max overflow-x-hidden transition-colors duration-300 bg-white dark:bg-black">
-
+  <body
+    class="h-max overflow-x-hidden transition-colors duration-300 bg-white dark:bg-black"
+  >
     <section id="welcome" class="h-[calc(1600px+100vh)] overflow-hidden">
-      <div id="pin-1" class="h-screen flex flex-col items-center justify-center">
-        <svg id="hello-svg" class="w-4/5 translate-x-[calc(50vw)] hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 163.22">
+      <div
+        id="name"
+        class="h-screen w-screen absolute z-10 flex items-center justify-center bg-transparent"
+      >
+        <!-- bg-[linear-gradient(90deg,_#057a93_0%,_#8fc9a9_9%,_#d2d906_17%,_#e8d804_24%,_#fed105_31%,_#fdcb5e_35%,_#fea02a_40%,_#fe8765_47%,_#f25546_54%,_#ee6b6a_61%,_#e994b2_64%,_#d496c0_72%,_#7e6db0_76%,_#5f60a9_86%,_#7a9beb_93%,_#4ba8d4_97%,_#7ab8df_100%)] -->
+        <div
+          id="eliot-title"
+          class="text-center text-9xl font-bold bg-clip-text text-transparent"
+        >
+          Eliot Hertenstein
+        </div>
+      </div>
+      <div
+        id="pin-1"
+        class="h-screen flex flex-col items-center justify-center"
+      >
+        <svg
+          id="hello-svg"
+          class="w-4/5 translate-x-[calc(50vw)] hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 480 163.22"
+        >
           <defs>
             <style>
-              .cls-1{
+              .cls-1 {
                 fill: none;
                 stroke-linecap: round;
                 stroke-linejoin: round;
@@ -30,84 +59,196 @@
                 stroke: url(#linear-gradient);
               }
             </style>
-            <linearGradient id="linear-gradient" y1="81.61" x2="480" y2="81.61" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#057a93"/>
-              <stop offset="0.09" stop-color="#8fc9a9"/>
-              <stop offset="0.17" stop-color="#d2d906"/>
-              <stop offset="0.24" stop-color="#e8d804"/>
-              <stop offset="0.31" stop-color="#fed105"/>
-              <stop offset="0.35" stop-color="#fdcb5e"/>
-              <stop offset="0.4" stop-color="#fea02a"/>
-              <stop offset="0.47" stop-color="#fe8765"/>
-              <stop offset="0.54" stop-color="#f25546"/>
-              <stop offset="0.61" stop-color="#ee6b6a"/>
-              <stop offset="0.64" stop-color="#e994b2"/>
-              <stop offset="0.72" stop-color="#d496c0"/>
-              <stop offset="0.76" stop-color="#7e6db0"/>
-              <stop offset="0.86" stop-color="#5f60a9"/>
-              <stop offset="0.93" stop-color="#7a9beb"/>
-              <stop offset="0.97" stop-color="#4ba8d4"/>
-              <stop offset="1" stop-color="#7ab8df"/>
+            <linearGradient
+              id="linear-gradient"
+              y1="81.61"
+              x2="480"
+              y2="81.61"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#057a93" />
+              <stop offset="0.09" stop-color="#8fc9a9" />
+              <stop offset="0.17" stop-color="#d2d906" />
+              <stop offset="0.24" stop-color="#e8d804" />
+              <stop offset="0.31" stop-color="#fed105" />
+              <stop offset="0.35" stop-color="#fdcb5e" />
+              <stop offset="0.4" stop-color="#fea02a" />
+              <stop offset="0.47" stop-color="#fe8765" />
+              <stop offset="0.54" stop-color="#f25546" />
+              <stop offset="0.61" stop-color="#ee6b6a" />
+              <stop offset="0.64" stop-color="#e994b2" />
+              <stop offset="0.72" stop-color="#d496c0" />
+              <stop offset="0.76" stop-color="#7e6db0" />
+              <stop offset="0.86" stop-color="#5f60a9" />
+              <stop offset="0.93" stop-color="#7a9beb" />
+              <stop offset="0.97" stop-color="#4ba8d4" />
+              <stop offset="1" stop-color="#7ab8df" />
             </linearGradient>
           </defs>
-            <path id="hello" class="cls-1 lax lax_preset_fadeIn:50:100" d="M7.5,145.57s65-37,80-75,13-44,11-50C94.09,7.34,85.46,7.66,80,10.49a21.55,21.55,0,0,0-5.53,4C71.3,17.74,66.25,27,60.5,65.57c-7,47-9,85-9,85s7.53-66,36.27-67c20.11-.7,21.73,13.3,20.9,21.76-.29,2.87-1.6,12.41-2.17,15.24-1.52,7.48-4.81,22.18,5,28,31.27,18.53,84.45-30.5,82-52-3.34-29.39-41.42-20.9-43,21-1.34,35.42,42.91,41.08,70,27,38-19.74,82.13-128,50.23-136.63C239.3-.58,227.61,118.08,243.5,141.57s46.42,11.31,70-17c32.71-39.27,53.84-105.46,30-114-22.13-7.93-52.52,106-24,136,18.46,19.4,42.13,5.21,53-17,7.55-15.44,12.62-37.12,25-43,59.8-28.42,52.71,70,12,68-38.44-1.85-37.49-52.44-12-68,18.24-11.15,32-2,46,3,9.66,3.43,22.46-1.15,29-10"/>
+          <path
+            id="hello"
+            class="cls-1 lax lax_preset_fadeIn:50:100 opacity-0"
+            d="M7.5,145.57s65-37,80-75,13-44,11-50C94.09,7.34,85.46,7.66,80,10.49a21.55,21.55,0,0,0-5.53,4C71.3,17.74,66.25,27,60.5,65.57c-7,47-9,85-9,85s7.53-66,36.27-67c20.11-.7,21.73,13.3,20.9,21.76-.29,2.87-1.6,12.41-2.17,15.24-1.52,7.48-4.81,22.18,5,28,31.27,18.53,84.45-30.5,82-52-3.34-29.39-41.42-20.9-43,21-1.34,35.42,42.91,41.08,70,27,38-19.74,82.13-128,50.23-136.63C239.3-.58,227.61,118.08,243.5,141.57s46.42,11.31,70-17c32.71-39.27,53.84-105.46,30-114-22.13-7.93-52.52,106-24,136,18.46,19.4,42.13,5.21,53-17,7.55-15.44,12.62-37.12,25-43,59.8-28.42,52.71,70,12,68-38.44-1.85-37.49-52.44-12-68,18.24-11.15,32-2,46,3,9.66,3.43,22.46-1.15,29-10"
+          />
         </svg>
       </div>
 
-      <div id="scroll-indicator-div" class="absolute top-[95%] w-full text-center">
-        <i id="scroll-arrow" class="fa-solid fa-angle-down animate-bounce cursor-pointer"></i>
+      <div
+        id="scroll-indicator-div"
+        class="absolute top-[95%] w-full text-center"
+      >
+        <i
+          id="scroll-arrow"
+          class="fa-solid fa-angle-down animate-bounce cursor-pointer"
+        ></i>
       </div>
     </section>
 
     <section id="intro" class="h-screen flex flex-row">
-      <div id="test" class="w-full flex items-center text-center justify-center m-3">
-        <h3 id="intro-text" class="text-9xl font-bold text-black dark:text-white">Hi! I'm <a id="eliot-link" class="text-9xl font-bold text-transparent bg-clip-text">Eliot</a></h3>
+      <div
+        id="test"
+        class="w-full flex items-center text-center justify-center m-3"
+      >
+        <h3
+          id="intro-text"
+          class="text-9xl font-bold text-black dark:text-white"
+        >
+          Hi! I'm
+          <a
+            id="eliot-link"
+            class="text-9xl font-bold text-transparent bg-clip-text"
+            >Eliot</a
+          >
+        </h3>
       </div>
     </section>
 
     <section id="interests" class="h-screen flex flex-row">
       <div class="w-full items-center justify-center m-3 text-center">
-        <div id="im-a-title" class="text-7xl font-bold text-black dark:text-white">I'm a</div>
+        <div
+          id="im-a-title"
+          class="text-7xl font-bold text-black dark:text-white"
+        >
+          I'm a
+        </div>
         <ul class="overflow-visible">
-          <li id="developer-link" class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group">
-            <a class="lg:inline-block text-black dark:text-white lg:group-hover:!-translate-x-[43.225px] lg:transition lg:duration-100 lg:ease-in-out">Developer</a>
-            <a href="https://github.com/eiiot"><i class="fa fa-github text-black block md:inline-block dark:text-white lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[43.225px] lg:transition lg:mx-[16.7px] lg:ease-in-out"></i></a>
+          <li
+            id="developer-link"
+            class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group"
+          >
+            <a
+              class="lg:inline-block text-black dark:text-white lg:group-hover:!-translate-x-[43.225px] lg:transition lg:duration-100 lg:ease-in-out"
+              >Developer</a
+            >
+            <a href="https://github.com/eiiot"
+              ><i
+                class="fa fa-github text-black block md:inline-block dark:text-white lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[43.225px] lg:transition lg:mx-[16.7px] lg:ease-in-out"
+              ></i
+            ></a>
           </li>
-          <li id="journalist-link" class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group">
-            <a class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[51.6665px] lg:transition lg:duration-100 lg:ease-in-out">Journalist</a>
-            <a href="https://berkeleyhighjacket.com/author/eliothertenstein"><i class='fa icon-JKT-Logo block md:inline-block text-[#800000] translate-y-2 lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[51.6665px] lg:transition lg:mx-[16.7px] lg:ease-in-out'></i></a>
-          </li> 
-          <li id="cyclist-link" class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group">
-            <a class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[35.35px] lg:transition lg:duration-100 lg:ease-in-out">Cyclist</a>
-            <a href="https://www.strava.com/athletes/eliothertenstein"><i class="fa-brands fa-strava block md:inline-block text-orange-600 lg:fixed lg:w-0 group-hover:w-auto lg:opacity-0 group-hover:opacity-100 lg:group-hover:-translate-x-[35.35px] transition lg:mx-[16.7px] ease-in-out"></i></a>
+          <li
+            id="journalist-link"
+            class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group"
+          >
+            <a
+              class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[51.6665px] lg:transition lg:duration-100 lg:ease-in-out"
+              >Journalist</a
+            >
+            <a href="https://berkeleyhighjacket.com/author/eliothertenstein"
+              ><i
+                class="fa icon-JKT-Logo block md:inline-block text-[#800000] translate-y-2 lg:fixed lg:w-0 lg:group-hover:w-auto lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:-translate-x-[51.6665px] lg:transition lg:mx-[16.7px] lg:ease-in-out"
+              ></i
+            ></a>
+          </li>
+          <li
+            id="cyclist-link"
+            class="cursor-pointer m-5 text-6xl md:text-7xl font-bold group"
+          >
+            <a
+              class="inline-block text-black dark:text-white lg:group-hover:!-translate-x-[35.35px] lg:transition lg:duration-100 lg:ease-in-out"
+              >Cyclist</a
+            >
+            <a href="https://www.strava.com/athletes/eliothertenstein"
+              ><i
+                class="fa-brands fa-strava block md:inline-block text-orange-600 lg:fixed lg:w-0 group-hover:w-auto lg:opacity-0 group-hover:opacity-100 lg:group-hover:-translate-x-[35.35px] transition lg:mx-[16.7px] ease-in-out"
+              ></i
+            ></a>
           </li>
         </ul>
       </div>
     </section>
 
     <section id="worked" class="h-[180vh] flex flex-row">
-      <div class="w-full flex flex-col items-center text-center justify-center m-3">
-        <span class="text-7xl font-bold text-black dark:text-white">I've worked on websites</span>
-        <span id="big-text" class="text-7xl font-bold text-black dark:text-white -z-10 backspace-hidden"><span class="inline-block w-20 text-right">B</span><span class="inline-block">i</span><span class="inline-block w-20 text-left">g</span></span>
+      <div
+        class="w-full flex flex-col items-center text-center justify-center m-3"
+      >
+        <span class="text-7xl font-bold text-black dark:text-white"
+          >I've worked on websites</span
+        >
+        <span
+          id="big-text"
+          class="text-7xl font-bold text-black dark:text-white -z-10 backspace-hidden"
+          ><span class="inline-block w-20 text-right">B</span
+          ><span class="inline-block">i</span
+          ><span class="inline-block w-20 text-left">g</span></span
+        >
         <div class="h-[95vh] relative"></div>
-        <span id="small-text-wrapper" class="text-3xl font-bold text-white dark:text-black backspace-hidden"><span>and</span><br><span id="small-text" class="inline-block">small</span></span>
+        <span
+          id="small-text-wrapper"
+          class="text-3xl font-bold text-white dark:text-black backspace-hidden"
+          ><span>and</span><br /><span id="small-text" class="inline-block"
+            >small</span
+          ></span
+        >
       </div>
     </section>
 
     <section id="fun" class="h-screen flex flex-row">
-      <div class="w-full flex flex-col items-center text-center justify-center m-3 select-none">
-        <span class="text-7xl font-bold text-black dark:text-white backspace-hidden">I love to make cool things for <a id="fun" class="cursor-pointer  text-transparent bg-clip-text bg-indigo-500">fun!</a></span>
-        <button id="super-confetti-button" class="translate-y-[-100vh] transition py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/50 focus:outline-none m-3 opacity-0">Ultra Confetti Button</button>
+      <div
+        class="w-full flex flex-col items-center text-center justify-center m-3 select-none"
+      >
+        <span
+          class="text-7xl font-bold text-black dark:text-white backspace-hidden"
+          >I love to make cool things for
+          <a
+            id="fun"
+            class="cursor-pointer text-transparent bg-clip-text bg-indigo-500"
+            >fun!</a
+          ></span
+        >
+        <button
+          id="super-confetti-button"
+          class="translate-y-[-100vh] transition py-2 px-3 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/50 focus:outline-none m-3 opacity-0"
+        >
+          Ultra Confetti Button
+        </button>
       </div>
     </section>
 
     <section id="contact" class="h-screen flex flex-row">
-      <div class="w-full flex flex-col items-center text-center justify-center m-3 select-none">
-        <span class="text-5xl font-bold text-black dark:text-white backspace-hidden ">So let's make something cool together!</span>
-        <form action="mailto:eliot@hertenste.in" class="flex items-center justify-center">
-          <input type="submit" id="contact-button" class="py-4 px-6 text-white text-lg font-semibold rounded-lg drop-shadow-lg transition duration-100 focus:outline-none m-10 z-10 cursor-pointer" value="Contact Me">
+      <div
+        class="w-full flex flex-col items-center text-center justify-center m-3 select-none"
+      >
+        <span
+          class="text-5xl font-bold text-black dark:text-white backspace-hidden"
+          >So let's make something cool together!</span
+        >
+        <form
+          action="mailto:eliot@hertenste.in"
+          class="flex items-center justify-center"
+        >
+          <input
+            type="submit"
+            id="contact-button"
+            class="py-4 px-6 text-white text-lg font-semibold rounded-lg drop-shadow-lg transition duration-100 focus:outline-none m-10 z-10 cursor-pointer"
+            value="Contact Me"
+          />
           <!-- Dotted Button Outline Under Button -->
-           <div class="absolute py-3 px-5 text-transparent text-lg box-border border-[2px] border-dashed border-white bg-transparent font-semibold rounded-lg drop-shadow-lg transition duration-100 focus:outline-none m-10 -z-10">Contact Me</div>
+          <div
+            class="absolute py-3 px-5 text-transparent text-lg box-border border-[2px] border-dashed border-white bg-transparent font-semibold rounded-lg drop-shadow-lg transition duration-100 focus:outline-none m-10 -z-10"
+          >
+            Contact Me
+          </div>
         </form>
       </div>
     </section>
