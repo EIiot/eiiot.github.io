@@ -142,19 +142,26 @@ ScrollTrigger.create({
       1 + 140 * (self.progress * self.progress)
     })`;
   },
+  onEnter: (self) => {
+    document.body.classList.remove("transition-colors", "duration-300");
+  },
   onLeave: (self) => {
     $("#small-text-wrapper").classList.remove("text-white", "dark:text-black");
     $("#small-text-wrapper").classList.add("text-black", "dark:text-white");
     toggleDarkMode();
-    // set #big-text to 0
-    $("#big-text").style.opacity = 0;
+    // delay by 1 event loop
+    setTimeout(() => {
+      document.body.classList.add("transition-colors", "duration-300");
+    }, 0);
   },
   onEnterBack: (self) => {
     $("#small-text-wrapper").classList.remove("text-black", "dark:text-white");
     $("#small-text-wrapper").classList.add("text-white", "dark:text-black");
-    // set #big-text to 1
-    $("#big-text").style.opacity = 1;
+    document.body.classList.remove("transition-colors", "duration-300");
     toggleDarkMode();
+  },
+  onLeaveBack: (self) => {
+    document.body.classList.add("transition-colors", "duration-300");
   },
 });
 
