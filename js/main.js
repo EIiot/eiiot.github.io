@@ -1,6 +1,12 @@
 import "../css/tailwind.css";
 import "../css/style.css";
 import "../css/jacket-font.css";
+import "https://kit.fontawesome.com/0f926a83db.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import confetti from "canvas-confetti";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // No it's not JQuery
 const $ = document.querySelector.bind(document);
@@ -146,6 +152,7 @@ ScrollTrigger.create({
     document.body.classList.remove("transition-colors", "duration-300");
   },
   onLeave: (self) => {
+    $("#big-text").style.transform = `scale(1)`;
     $("#small-text-wrapper").classList.remove("text-white", "dark:text-black");
     $("#small-text-wrapper").classList.add("text-black", "dark:text-white");
     toggleDarkMode();
